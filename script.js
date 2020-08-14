@@ -1,13 +1,4 @@
 
-function submitButtonStyle() {
-    document.getElementsByClassName("shop-item-button").style.backgroundColor = "green";
-}
-
-function changebutton() {
-    document.getElementsByClassName("btn-purchase").style.backgroundColor = "green";
-}
-
-
 
 if(document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
