@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RJ's Bistro</title>
+	<link rel="stylesheet" href="./style.css">
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<script defer src="script.js"></script>
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container.fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="float-left">
+						<img width="120" height="120" src="img/logofo.jpg" alt="Logo Image">
+					</a>
+
+					<div class="navbar-brand">
+						<a href="index.html"><h1>FOOD oye</h1></a>
+						<p>
+						HAVE IT HEALTHY, HAVE IT SAFE!
+						</p>
+					</div>
+
+					<button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">☰ 
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div id="collapsable-nav" class="collapse navbar-collapse">
+					<ul id="nav-list" class="nav navbar-nav navbar-right active">
+						<li class="d-block d-sm-none active text-center">
+							<a href="index.html">
+								Home
+							</a>
+							<hr class="navbar-hr">
+						</li>
+						<li class="text-center">
+							<a href="order.html">
+								<span class="glyphicon glyphicon"></span>Place Order
+							</a>
+							<hr class="navbar-hr">
+
+						</li>
+						<li class="text-center">
+							<a href="#">
+								<span class="glyphicon"></span><br class="d-none d-lg-block">About
+							</a>
+							<hr class="navbar-hr">
+						</li>	
+						<li id="phone" class="text-center">
+							<a href="tel:+919325922813">
+								<span>+919325922813</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+	</header>
+
+
+
+	<div class="container">
+	<h2 id="title" class="section-header">PERSONAL DETAILS</h2>
+	<div id="details"><p>
+		NAME <br class="d-block d-sm-none"><input type="text" id="name"><p></p>
+		PHONE NO.<br class="d-block d-sm-none"><input type="number" id="phoneno"><p></p>
+		ADDRESS<br class="d-block d-sm-none"><input type="text" id="address"><p></p>
+	</p>
+	  <section class="container content-section">
+            <h2 class="section-header">YOUR CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            	<div class="cart-row">
+            		<span class="cart-item-title cart-column">
+            		pnr pasanda
+            		</span>
+            		<span class="cart-price cart-column">₹190</span>
+            		<div class="cart-quantity cart-column">
+            			<input class="cart-quantity-input" type="number" value="1">
+            			<button class="btn btn-danger" type="button">Remove</button>
+            		</div>
+            	</div>
+
+            	<div class="cart-row">
+            		<span class="cart-item-title cart-column">
+            			pnr makhanwala
+            		</span>
+            		<span class="cart-price cart-column">₹170</span>
+            		<div class="cart-quantity cart-column">
+            			<input class="cart-quantity-input" type="number" value="1">
+            			<button class="btn btn-danger" type="button">Remove</button>
+            		</div>
+            	</div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price"> ₹0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" onclick="ready(); getorder();" type="sub,it">PLACE ORDER</button>
+        </section>
+</div>
+
+
+
+<div id="content"></div>
+</div>
+
+<footer class="panel-footer">
+	<div class="container-fluid">
+		<div class="row">
+			<section id="hours" class="col-sm-4">
+				<span>Delivery Hours:<br>
+				Mon-Fri: 10:00am-10:00pm<br>
+				Sat-Sun: 11:00am-11:00pm </span>
+				<hr style="height:2px;border-width:0;color:white;background-color:gray"class="d-block d-sm-none">
+
+			</section>
+			<section id="address" class="col-sm-4">
+				<span>* Delivery area- within Boisar, with minimum order of ₹50</span>
+				<hr style="height:2px;border-width:0;color:white;background-color:gray"
+				class="d-block d-sm-none">
+			</section>
+			<section id="testimonials" class="col-sm-4">	<span>Phone No.-<br>
+				<a href="tel:+919325922813">
+				+919325922813
+				</a></span>
+				<p>100% SAFE and SANITISED</p>
+
+			</section>
+		</div>
+		<div class="text-center">&copy;  2020 Food Oye
+			<hr style="height:2px;border-width:0;color:white;background-color:gray"class="d-block d-sm-none">
+			<hr style="height:2px;border-width:0;color:white;background-color:gray"class="d-block d-sm-none">
+		</div>
+		</div>
+</footer>
+
+</body>
+</html>
