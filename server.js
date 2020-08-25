@@ -8,18 +8,8 @@ const app = express();
 
 // Firebase JS Client SDK
 const firebase = require("firebase");
-// The web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyA8MEAYpRA7E4eA1_cka8n0U6zmYXl9mz0",
-    authDomain: "food-oye-v1.firebaseapp.com",
-    databaseURL: "https://food-oye-v1.firebaseio.com",
-    projectId: "food-oye-v1",
-    storageBucket: "food-oye-v1.appspot.com",
-    messagingSenderId: "912740141069",
-    appId: "1:912740141069:web:bb793011183a3d52b66d44"
-};
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(require("./firebaseConfig.js"));
 // Firebase products used
 const firestore = firebase.firestore();
 
