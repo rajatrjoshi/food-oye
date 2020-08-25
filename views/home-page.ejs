@@ -1,0 +1,26 @@
+<%- contentFor("headContent"); %>
+<title>Food Oye</title>
+
+<%- contentFor("bodyContent"); %>
+<div id="main-content" class="container-fluid">
+<span></span><span>
+Restaurants near me</span><p></p>
+
+
+<div id="home-tiles" class="row text-center">
+
+	<% restaurants.forEach
+	(
+		(restaurant) =>
+		{ %>
+			<div class="col-md-4 col-sm-6 col-6">
+				<a href="/restaurant/<%= restaurant.id %>">
+					<div id="hotelA-tile">
+					<span><%= restaurant.name %></span>
+					</div>
+				</a>
+			</div>
+		<% }
+	); %>
+</div>
+</div>
