@@ -26,8 +26,8 @@ const firestore = firebase.firestore();
 
 
 // Middleware
-// Static folder to serve html, css and imgs
-app.use(express.static(__dirname + "/public"));
+// Static folder to serve css and js
+app.use("/public", express.static(__dirname + "/public"));
 // ejs
 app.use(expressLayouts);
 app.set("view engine", "ejs");
