@@ -20,20 +20,17 @@ router.get
 			{
 				const restDetails = restDetailsDoc.data();
 
-				await firestore.collection("categories").where("rest_id", "==", restId).get().then
+				await firestore.collection("categories").where("rest_id", "==", restId).orderBy("name", "asc").get().then
 				(
 					(querySnapshot) =>
 					{
 						let categories = [];
 						querySnapshot.forEach
 						(
-							(category) => categories.push({ ...category.data() })
+							(category) => categories.push({ id: category.id, ...category.data() })
 						);
 
-						console.log(restDetails);
-						console.log(categories);
-
-						// res.render("restaurant-home", { restDetails, categories });
+						res.render("restaurant-home", { restDetails, categories });
 					}
 				).catch
 				(
