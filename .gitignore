@@ -6,7 +6,7 @@ firestore.rules
 firestore.indexes.json
 storage.rules
 key.json
-firebaseConfig.js
+firebaseConfig.json
 
 # Logs
 logs

@@ -8,8 +8,9 @@ const app = express();
 
 // Firebase JS Client SDK
 const firebase = require("firebase");
+const firebaseConfig = require("./firebaseConfig.json")
 // Initialize Firebase
-firebase.initializeApp(require("./firebaseConfig.js"));
+firebase.initializeApp(firebaseConfig);
 // Firebase products used
 const firestore = firebase.firestore();
 
