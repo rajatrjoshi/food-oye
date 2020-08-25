@@ -45,6 +45,55 @@ router.get
 );
 
 
+router.get
+(
+	"/dishes/:categoryId",
+	async (req, res) =>
+	{
+		const categoryId = req.params.categoryId;
+
+		await firestore.collection("categories").doc(categoryId).get().then
+		(
+			async (categoryDoc) =>
+			{
+				const categoryDetails = categoryDoc.data();
+
+				await firestore.collection("restaurants").doc(categoryDetails.rest_id).get().then
+				(
+					async (restaurantDetailsDoc) =>
+					{
+						const restaurantDetails = restaurantDetailsDoc.data();
+
+						await firestore.collection("dishes").where("category_id", "==", categoryId).orderBy("name", "asc").get().then
+						(
+							(dishesQuerySnapshot) =>
+							{
+								let dishes = [];
+								dishesQuerySnapshot.forEach
+								(
+									(dish) => dishes.push({ id: dish.id, ...dish.data() })
+								);
+
+								res.render("dishes", { restaurantDetails, categoryDetails, dishes });
+							}
+						).catch
+						(
+							(err) => console.log(err)
+						);
+					}
+				).catch
+				(
+					(err) => console.log(err)
+				);
+			}
+		).catch
+		(
+			(err) => console.log(err)
+		);
+	}
+);
+
+
 
 
 module.exports = router;
