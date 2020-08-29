@@ -14,33 +14,32 @@ router.get
 	{
 		let restId = req.params.restaurantId;
 
-		await firestore.collection("restaurants").doc(restId).get().then
+		const restDetails = await firestore
+		.collection("restaurants")
+		.doc(restId)
+		.get()
+		.then((querySnapshot) => querySnapshot.data());
+		
+		const categories = await firestore
+		.collection("categories")
+		.where("rest_id", "==", restId)
+		.orderBy("name", "asc")
+		.get()
+		.then
 		(
-			async (restDetailsDoc) =>
+			(querySnapshot) =>
 			{
-				const restDetails = restDetailsDoc.data();
-
-				await firestore.collection("categories").where("rest_id", "==", restId).orderBy("name", "asc").get().then
+				let categoryArr = [];
+				querySnapshot.forEach
 				(
-					(querySnapshot) =>
-					{
-						let categories = [];
-						querySnapshot.forEach
-						(
-							(category) => categories.push({ id: category.id, ...category.data() })
-						);
-
-						res.render("restaurant-home", { restDetails, categories });
-					}
-				).catch
-				(
-					(err) => console.log(err)
+					category => categoryArr.push({ id: category.id, ...category.data() })
 				);
+
+				return categoryArr;
 			}
-		).catch
-		(
-			(err) => console.log(err)
 		);
+		
+		res.render("restaurant-home", { restDetails, categories });
 	}
 );
 
@@ -51,45 +50,39 @@ router.get
 	async (req, res) =>
 	{
 		const categoryId = req.params.categoryId;
+		
+		const categoryDetails = await firestore
+			.collection("categories")
+			.doc(categoryId)
+			.get()
+			.then(e => e.data());
+		
+		const restaurantDetails = await firestore
+			.collection("restaurants")
+			.doc(categoryDetails.rest_id)
+			.get()
+			.then(e => e.data());
+		
+		const dishes = await firestore
+			.collection("dishes")
+			.where("category_id", "==", categoryId)
+			.orderBy("name", "asc")
+			.get()
+			.then
+			(
+				(querySnapshot) =>
+				{
+					let dishArr = [];
+					querySnapshot.forEach
+					(
+						dish => dishArr.push({ id: dish.id, ...dish.data() })
+					);
 
-		await firestore.collection("categories").doc(categoryId).get().then
-		(
-			async (categoryDoc) =>
-			{
-				const categoryDetails = categoryDoc.data();
-
-				await firestore.collection("restaurants").doc(categoryDetails.rest_id).get().then
-				(
-					async (restaurantDetailsDoc) =>
-					{
-						const restaurantDetails = restaurantDetailsDoc.data();
-
-						await firestore.collection("dishes").where("category_id", "==", categoryId).orderBy("name", "asc").get().then
-						(
-							(dishesQuerySnapshot) =>
-							{
-								let dishes = [];
-								dishesQuerySnapshot.forEach
-								(
-									(dish) => dishes.push({ id: dish.id, ...dish.data() })
-								);
-
-								res.render("dishes", { restaurantDetails, categoryDetails, dishes });
-							}
-						).catch
-						(
-							(err) => console.log(err)
-						);
-					}
-				).catch
-				(
-					(err) => console.log(err)
-				);
-			}
-		).catch
-		(
-			(err) => console.log(err)
-		);
+					return dishArr;
+				}
+			);
+			
+		res.render("dishes", { restaurantDetails, categoryDetails, dishes });
 	}
 );
 

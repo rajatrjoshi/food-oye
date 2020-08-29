@@ -1,9 +1,10 @@
 <%- contentFor("headContent") %>
 <title><%= restaurantDetails.name %>: <%= categoryDetails.name %></title>
+<script defer src="/public/js/dishes.js"></script>
 
 <%- contentFor("bodyContent") %>
 <div class="note text-center"> *Note: Extra ₹25 will be charged for delivery</div><div class="btn btn-primary order-button text-center container-fluid">
-	<a href="">PROCEED TO CHECKOUT</a> </div><p></p>
+	<a href="/restaurant/checkout">PROCEED TO CHECKOUT</a> </div><p></p>
 	
 	<% dishes.forEach
 	(
@@ -15,7 +16,7 @@
 				<div class="shop-item-details">
 					<img class="shop-item-image" src="<%= dish.img %>">
 					<span class="shop-item-price text-center float-left">₹ <%= dish.price %></span>
-					<button onclick="submitButtonStyle()" class="btn btn-primary shop-item-button" type="submit">ADD TO CART</button>
+					<button class="get-data btn btn-primary shop-item-button" type="submit" value="<%= dish.id %>">ADD TO CART</button>
 				</div>
 			</div>
 		<% }
