@@ -1,0 +1,47 @@
+<%- contentFor("headContent") %>
+<title>Checkout</title>
+
+<%- contentFor("bodyContent") %>
+<div class="container">
+	<h2 id="title" class="section-header">PERSONAL DETAILS</h2>
+
+	<form action="/customer" method="POST">
+		<div id="details"><p>
+			NAME <br class="d-block d-sm-none"><input type="text" id="name"><p></p>
+			PHONE NO.<br class="d-block d-sm-none"><input type="number" id="phoneno"><p></p>
+			ADDRESS<br class="d-block d-sm-none"><input type="text" id="address"><p></p>
+		</p>
+	
+		<section class="container content-section">
+			  <h2 class="section-header">YOUR CART</h2>
+			  <div class="cart-row">
+				  <span class="cart-item cart-header cart-column">ITEM</span>
+				  <span class="cart-item cart-header cart-column">HOTEL</span>
+				  <span class="cart-price cart-header cart-column">PRICE</span>
+				  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+			  </div>
+
+			  <div class="cart-items">
+				  <div class="cart-row">
+					  <span class="cart-item-title cart-column">
+					  pnr pasanda
+					  </span>
+					  <span class="cart-item-title cart-column">
+					  Hotel
+					  </span>
+					  <span class="cart-price cart-column">₹190</span>
+					  <div class="cart-quantity cart-column">
+						  <input class="cart-quantity-input" type="number" value="1">
+						  <button class="btn btn-danger" type="button">Remove</button>
+					  </div>
+				  </div>
+			  </div>
+			  
+			  <div class="cart-total">
+				  <strong class="cart-total-title">Total</strong>
+				  <span class="cart-total-price"> ₹0</span>
+			  </div>
+			  <button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
+		  </section>
+	</form>
+</div>

@@ -30,6 +30,7 @@ for(let i = 0; i < button.length; i++)
 			{
 				dishes.push(dishId);
 				button[i].innerHTML="ADDED TO CARD";
+				button[i].disabled = true;
 				sessionStorage.setItem("fo_dishes", JSON.stringify(dishes));
 			}
 		}
