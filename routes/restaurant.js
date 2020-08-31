@@ -12,9 +12,7 @@ router.get
 	"/home/:restaurantId",
 	async (req, res) =>
 	{
-		console.log("pdp");
 		let restId = req.params.restaurantId;
-		console.log(restId);
 
 		const restDetails = await firestore
 		.collection("restaurants")
