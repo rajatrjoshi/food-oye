@@ -1,5 +1,6 @@
 <%- contentFor("headContent") %>
 <title>Checkout</title>
+<script defer src="/public/js/checkout.js"></script>
 
 <%- contentFor("bodyContent") %>
 <div class="container">
@@ -13,35 +14,22 @@
 		</p>
 	
 		<section class="container content-section">
-			  <h2 class="section-header">YOUR CART</h2>
-			  <div class="cart-row">
-				  <span class="cart-item cart-header cart-column">ITEM</span>
-				  <span class="cart-item cart-header cart-column">HOTEL</span>
-				  <span class="cart-price cart-header cart-column">PRICE</span>
-				  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-			  </div>
+			<h2 class="section-header">YOUR CART</h2>
+			
+			<div class="cart-row">
+				<span class="cart-item cart-header cart-column">ITEM</span>
+				<span class="cart-item cart-header cart-column">HOTEL</span>
+				<span class="cart-price cart-header cart-column">PRICE</span>
+				<span class="cart-quantity cart-header cart-column">QUANTITY</span>
+			</div>
 
-			  <div class="cart-items">
-				  <div class="cart-row">
-					  <span class="cart-item-title cart-column">
-					  pnr pasanda
-					  </span>
-					  <span class="cart-item-title cart-column">
-					  Hotel
-					  </span>
-					  <span class="cart-price cart-column">₹190</span>
-					  <div class="cart-quantity cart-column">
-						  <input class="cart-quantity-input" type="number" value="1">
-						  <button class="btn btn-danger" type="button">Remove</button>
-					  </div>
-				  </div>
-			  </div>
+			<div class="cart-items"></div>
 			  
-			  <div class="cart-total">
-				  <strong class="cart-total-title">Total</strong>
-				  <span class="cart-total-price"> ₹0</span>
-			  </div>
-			  <button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
-		  </section>
+			<div class="cart-total">
+				<strong class="cart-total-title">Total</strong>
+				<span class="cart-total-price"></span>
+			</div>
+			<button class="btn btn-primary btn-purchase" type="submit">PLACE ORDER</button>
+		</section>
 	</form>
 </div>

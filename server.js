@@ -23,12 +23,14 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 // Body parser
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 
 //Routes
 app.use("/restaurant", require("./routes/restaurant.js"));
+app.use("/endpoints", require("./routes/endpoints.js"));
 
 
 
@@ -38,22 +40,25 @@ app.get
 	"/",
 	async (req, res) =>
 	{
-		await firestore.collection("restaurants").orderBy("name", "asc").get().then
-		(
-			(querySnapshot) =>
-			{
-				let restaurants = []
-				querySnapshot.forEach
-				(
-					(restaurant) => restaurants.push({ id: restaurant.id, ...restaurant.data() })
-				);
-				
-				res.render("home-page", { restaurants });
-			}
-		).catch
-		(
-			(err) => console.log(err)
-		);
+		const restaurants = await firestore
+			.collection("restaurants")
+			.orderBy("name", "asc")
+			.get()
+			.then
+			(
+				(querySnapshot) =>
+				{
+					let restaurantArr = []
+					querySnapshot.forEach
+					(
+						(restaurant) => restaurantArr.push({ id: restaurant.id, ...restaurant.data() })
+					);
+
+					return restaurantArr;
+				}
+			);
+
+		res.render("home-page", { restaurants });
 	}
 );
 
