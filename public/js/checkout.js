@@ -10,7 +10,7 @@ window.addEventListener
 	async () =>
 	{
 		const dishes = JSON.parse(sessionStorage.getItem("fo_dishes"));
-		if(dishes){
+		if(dishes && dishes.length > 0){
 			const details = await fetch
 			(
 				"/endpoints/dishRestDetails",
