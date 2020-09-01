@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ohhhhrajatjoshi/food-oye.git"
+    "url": "git+https://github.com/rajatrjoshi/food-oye.git"
   },
   "keywords": [
     "food",
@@ -19,9 +19,9 @@
   "author": "Harsh Kapadia, Rajat Joshi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ohhhhrajatjoshi/food-oye/issues"
+    "url": "https://github.com/rajatrjoshi/food-oye/issues"
   },
-  "homepage": "https://github.com/ohhhhrajatjoshi/food-oye#readme",
+  "homepage": "https://github.com/rajatrjoshi/food-oye#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
