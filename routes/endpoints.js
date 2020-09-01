@@ -19,11 +19,13 @@ router.post
 		{
 			const dishId = dishArr[i];
 			
-			const dishDetails = await firestore
+			let dishDetails = await firestore
 				.collection("dishes")
 				.doc(dishId)
 				.get()
 				.then((querySnapshot) => querySnapshot.data());
+
+			dishDetails = { id: dishId, ...dishDetails}
 			
 			const restDetails = await firestore
 				.collection("restaurants")

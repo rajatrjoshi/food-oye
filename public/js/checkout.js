@@ -23,7 +23,7 @@ window.addEventListener
 				}
 			)
 			.then((allDetails) => allDetails.json());
-	
+
 			for(let i = 0; i < details.dishRestDetails.length; i++)
 			{
 				dishRows[i] = makeRow(details.dishRestDetails[i]);
@@ -83,8 +83,13 @@ function makeRow(obj)
 		innerText: "Remove"
 	}).addEventListener("click", () => {
 		rowDiv.remove();
+
 		dishRows = dishRows.filter(e => !rowDiv.isSameNode(e));
 		updateTotalPrice();
+		
+		const currSessionStorage = JSON.parse(sessionStorage.getItem("fo_dishes"));
+		const newSessionStorage = currSessionStorage.filter(id => obj.dishDetails.id != id);
+		sessionStorage.setItem("fo_dishes", JSON.stringify(newSessionStorage));
 	});
 
 	return rowDiv;
