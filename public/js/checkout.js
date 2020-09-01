@@ -4,8 +4,6 @@ const cartTotalPrice = document.querySelector(".cart-total-price");
 let dishRows = [];
 
 
-
-
 window.addEventListener
 (
 	"load",
@@ -38,18 +36,7 @@ window.addEventListener
 );
 
 
-function updateTotalPrice(){
-	let totalPrice = 0;
-
-	for(let i = 0; i < dishRows.length; i++)
-		totalPrice += dishRows[i].dataset.dishPrice * dishRows[i].querySelector(".cart-quantity-input").value;	
-
-	cartTotalPrice.innerText = "₹" + totalPrice;
-}
-
-
-
-/* <div class="cart-row">
+/* <div class="cart-row" data-dish-price="dvnd">
 	<span class="cart-item-title cart-column">pnr pasanda</span>
 
 	<span class="cart-item-title cart-column">Hotel</span>
@@ -73,23 +60,32 @@ function makeRow(obj)
 	createElement("span.cart-item-title.cart-column", rowDiv, {
 		innerText: obj.dishDetails.name
 	});
+	
 	createElement("span.cart-item-title.cart-column", rowDiv, {
 		innerText: obj.restDetails.name
 	});
+
 	createElement("span.cart-price.cart-column", rowDiv, {
 		innerText: "₹" + obj.dishDetails.price
 	});
 
+
 	const div = createElement("div.cart-quantity.cart-column", rowDiv);
+
 	createElement("input.cart-quantity-input", div, {
 		type: "number",
 		value: 1,
 		min: 1
 	}).addEventListener("change", updateTotalPrice);
+
 	createElement("button.btn.btn-danger", div, {
 		type: "submit",
 		innerText: "Remove"
-	})
+	}).addEventListener("click", () => {
+		rowDiv.remove();
+		dishRows = dishRows.filter(e => !rowDiv.isSameNode(e));
+		updateTotalPrice();
+	});
 
 	return rowDiv;
 }
@@ -119,4 +115,15 @@ function createElement(selector, parent, attributes = {})
 			element.setAttribute(k, attributes[k]);
 
 	return element;
+}
+
+
+function updateTotalPrice()
+{
+	let totalPrice = 0;
+
+	for(let i = 0; i < dishRows.length; i++)
+		totalPrice += dishRows[i].dataset.dishPrice * dishRows[i].querySelector(".cart-quantity-input").value;	
+
+	cartTotalPrice.innerText = "₹" + totalPrice;
 }
