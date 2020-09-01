@@ -90,6 +90,17 @@ body {
 }
 
 
+#checkout-container
+{
+	background-color: #000;
+}
+
+#checkout-div
+{
+	width: 90%;
+	margin: auto;
+}
+
 .checkoutbtn {
 	font-size: 0.8em;
 	vertical-align: middle;
@@ -101,7 +112,7 @@ body {
 
 
 .cartbtn {
-	background-color: black;
+	color: white;
 }
 
 
@@ -437,6 +448,12 @@ h2{
 	color: white;
 }
 
+
+.btn
+{
+	display: flex;
+	align-items: center;
+}
 
 .btn-primary {
     color: white;

@@ -3,8 +3,23 @@
 <script defer src="/public/js/dishes.js"></script>
 
 <%- contentFor("bodyContent") %>
-<div class="note text-center"> *Note: Extra ₹25 will be charged for delivery</div><div class="btn btn-primary order-button text-center container-fluid">
-	<a href="/restaurant/checkout">PROCEED TO CHECKOUT</a> </div><p></p>
+	<div id="checkout-container">
+		<div id="checkout-div">
+			<a href="/restaurant/checkout" class="btn btn-success checkoutbtn float-left" >Proceed To Checkout</a>
+			
+			<div class="d-flex flex-row-reverse">
+				<div class="cartbtn d-flex flex-row p-3">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" color="white" />
+					</svg>
+		
+					<sup id="dish-count" class="badge bg-success rounded-circle number-of-cart-items">0</sup>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container note text-center"> *Note: Extra ₹25 will be charged for delivery</div><br>
 	
 	<% dishes.forEach
 	(
@@ -16,7 +31,7 @@
 				<div class="shop-item-details">
 					<img class="shop-item-image" src="<%= dish.img %>">
 					<span class="shop-item-price text-center float-left">₹ <%= dish.price %></span>
-					<button class="get-data btn btn-primary shop-item-button" type="submit" value="<%= dish.id %>">ADD TO CART</button>
+					<button class="get-data btn btn-success shop-item-button" type="submit" value="<%= dish.id %>">ADD TO CART</button>
 				</div>
 			</div>
 		<% }
