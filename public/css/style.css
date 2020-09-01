@@ -62,7 +62,7 @@ body {
 .navbar-brand h1 {
 	font-family: 'Oxygen', sans-serif;
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	text-transform: uppercase;
 	font-weight: bold;
 	text-shadow: 2px 2px 2px red;
@@ -90,6 +90,19 @@ body {
 }
 
 
+.checkoutbtn {
+	font-size: 0.8em;
+	vertical-align: middle;
+	height: 30px;
+	position: relative;	
+	top: 8px;
+
+}
+
+
+.cartbtn {
+	background-color: black;
+}
 
 
 @media (min-width: 768px) {
@@ -176,7 +189,7 @@ body {
 
 	.navbar-brand p {
 		text-transform: uppercase;
-		font-size: .65em;
+		font-size: 0.5em;
 		margin-left: 5px;
 		font-weight: bold;
 		text-shadow: 2px 2px 4px silver;
@@ -245,7 +258,8 @@ body {
 }
 
 .navbar-hr {
-    -moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
     -moz-float-edge: margin-box;
     border: 1px inset;
     color: gray;
@@ -297,7 +311,7 @@ body {
 	font-size: 1.2em;
 }
 
-#hotelA-tile, #hotelB-tile, #hotelC-tile, #hotelD-tile, #hotelE-tile, #hotelF-tile, #hotelG-tile, #hotelH-tile {
+#hotelA-tile, #hotelB-tile, #hotelC-tile, #hotelD-tile, #hotelE-tile, #hotelF-tile {
 	height: 90px;
 	width: 170px;
 	margin-bottom: 15px;
@@ -308,7 +322,8 @@ body {
 
 }
 
-#hotelA-tile span, #hotelB-tile span, #hotelC-tile span, #hotelD-tile span, #hotelE-tile span, #hotelF-tile span, #hotelG-tile span, #hotelH-tile span {
+
+#hotelA-tile span, #hotelB-tile span, #hotelC-tile span, #hotelD-tile span, #hotelE-tile span, #hotelF-tile span {
 	font-size: 0.9em;
 	text-transform: uppercase;
 	background-color: #fff;
@@ -331,14 +346,14 @@ body {
 	opacity: 0.4;
 }
 
+
 #hotelA > span {
 	margin-bottom: 5px;
 	position: relative;
-	left: 0px;
 	top: -200px;
 	width: 100%;
 	text-align: center;
-	font-size: 0.70em;
+	font-size: 0.65em;
 	font-weight: bold;
 	color: #000;
 }
@@ -346,7 +361,7 @@ body {
 
 #paneermenu-tile, #mushroommenu-tile, #dalmenu-tile, #currymenu-tile, #basicsabjimenu-tile, #rotimenu-tile, #raitamenu-tile, #khichdimenu-tile {
 	position: relative;
-	top: -150px;
+	top: -140px;
 	border: 2px solid lightgray;
 	overflow: hidden;
 	width: 150px;
@@ -358,17 +373,17 @@ body {
 
 #paneermenu-tile span, #mushroommenu-tile span, #dalmenu-tile span, #currymenu-tile span, #basicsabjimenu-tile span, #rotimenu-tile span, #raitamenu-tile span, #khichdimenu-tile span{
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	top: 125px;
 	width: 100%;
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 0.85em;
 	text-transform: uppercase;
 	background-color: #fff;
 	font-weight: bold;
 	color: #000;
 	opacity: 0.9;
 }
+
 
 #paneermenu-tile:hover, #mushroommenu-tile:hover, #dalmenu-tile:hover, #currymenu-tile:hover, #basicsabjimenu-tile:hover, #rotimenu-tile:hover, #raitamenu-tile:hover, #khichdimenu-tile:hover {
 	box-shadow: 0 1px 5px 1px black;
@@ -393,7 +408,7 @@ h2{
 	font-weight: bold;
 	font-family: 'Oxygen' , sans-serif;
 	font-size: 1.7em;
-	font-color: green;
+	color: green;
 }
 
 
