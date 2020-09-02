@@ -422,7 +422,9 @@ h2{
 	color: green;
 }
 
-
+.login-details div {
+	border: 2px solid black;
+}
 
 #details {
 	font-size: .8em;
