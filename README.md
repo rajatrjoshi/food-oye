@@ -20,13 +20,13 @@
 :arrow_down: Home page and restaurant page
 <br />
 <br />
-<img src="./web_app_images/home_page.jpg" width=30% /> <img src="./web_app_images/restaurant.jpg" width=30% />
+<img src="./web_app_images/home_page.jpg" width=40% /> <img src="./web_app_images/restaurant.jpg" width=40% />
 <br />
 <br />
 :arrow_down: Dishes page and checkout page
 <br />
 <br />
-<img src="./web_app_images/dishes.jpg" width=30% /> <img src="./web_app_images/checkout.jpg" width=30% />
+<img src="./web_app_images/dishes.jpg" width=40% /> <img src="./web_app_images/checkout.jpg" width=40% />
 
 ## Authors
 
