@@ -27,3 +27,13 @@
 <br />
 <br />
 <img src="./web_app_images/dishes.jpg" width=30% /> <img src="./web_app_images/checkout.jpg" width=30% />
+
+## Authors
+
+- Harsh Kapadia
+   - [GitHub](https://github.com/HarshKapadia2)
+   - [LinkedIn](https://www.linkedin.com/in/harshgkapadia/)
+   - [Twitter](https://twitter.com/harshgkapadia)
+- Rajat Joshi
+   - [GitHub](https://github.com/rajatrjoshi/)
+   - [LinkedIn](https://www.linkedin.com/in/rajat-joshi-5a7070190/)
