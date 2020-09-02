@@ -10,6 +10,20 @@
 - Front end
    - HTML
    - CSS (Bootstrap)
+   - JS
 - Back end
-   - Node.js
+   - Node.js (Express.js)
    - Firebase
+
+## Web app screenshots
+
+:arrow_down: Home page and restaurant page
+<br />
+<br />
+<img src="./web_app_images/home_page.jpg" width=30% /> <img src="./web_app_images/restaurant.jpg" width=30% />
+<br />
+<br />
+:arrow_down: Dishes page and checkout page
+<br />
+<br />
+<img src="./web_app_images/dishes.jpg" width=30% /> <img src="./web_app_images/checkout.jpg" width=30% />
