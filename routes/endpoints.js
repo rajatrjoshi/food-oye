@@ -25,13 +25,21 @@ router.post
 				.get()
 				.then((querySnapshot) => querySnapshot.data());
 
-			dishDetails = { id: dishId, ...dishDetails}
+			const rest_id = dishDetails.rest_id;
+
+			dishDetails = {
+				id: dishId,
+				name: dishDetails.name,
+				price: dishDetails.price
+			};
 			
-			const restDetails = await firestore
+			let restDetails = await firestore
 				.collection("restaurants")
-				.doc(dishDetails.rest_id)
+				.doc(rest_id)
 				.get()
 				.then((querySnapshot) => querySnapshot.data());
+
+			restDetails = { name: restDetails.name };
 
 			details.push({ dishDetails, restDetails });
 		}
