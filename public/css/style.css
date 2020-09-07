@@ -116,6 +116,21 @@ body {
 }
 
 
+/* ================================== ERROR HANDLING =============================== */
+
+#err-status {
+	color: red;
+	padding: 1em;
+}
+
+#err-trace {
+	font-size: 15px;
+	padding: 0.5em;
+	color: #9e9e9e;
+}
+
+/* ===================================== MEDIA QUERIES =========================================== */
+
 @media (min-width: 768px) {
 	.navbar > .container .navbar-brand,
 	.navbar > .container.fluid .navbar-brand {

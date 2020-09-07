@@ -81,6 +81,44 @@ app.get
 
 
 
+// Error handlers
+app.use
+(
+	(req, res, next) =>
+	{
+		let err = new Error('Not Found');
+		err.status = 404;
+		err.message = `Requested URL "${req.url}" was not found`;
+    	next(err);
+	}
+);
+
+app.use
+(
+	(err, req, res, next) =>
+	{
+		if(err.status === 404)
+			var status_descp = "NOT FOUND";
+
+		else if(!err.status)
+		{
+			err.status = 500;
+			status_descp = "INTERNAL SERVER ERROR";
+		}
+		
+		res.status(err.status);
+
+        res.render('error', {
+			status: err.status,
+			status_descp: status_descp,
+            err_trace: err
+        });
+	}
+);
+
+
+
+
 const PORT = process.env.PORT || 5000;
 app.listen
 (
