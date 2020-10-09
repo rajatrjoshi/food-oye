@@ -24,7 +24,7 @@ const key = {
 //Initialize Firebase app
 firebase.initializeApp({
   credential: firebase.credential.cert(key),
-  databaseURL: "https://food-oye-d8e3b.firebaseio.com"
+  databaseURL: process.env.DB_URL
 });
 // Firebase products used
 const firestore = firebase.firestore();
