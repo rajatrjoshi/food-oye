@@ -3,6 +3,8 @@
   <br />
   <br />
   🍴 <b>Food Oye</b>, a web app for ordering food. 🍴
+  <br />
+  <i>https://food-oye.herokuapp.com (Mobile only)</i>
 </p>
 
 ## Technologies
@@ -16,6 +18,8 @@
    - Firebase
 
 ## Web app screenshots
+
+> NOTE: In the [hosted web app](https://food-oye.herokuapp.com), data is present only in the restaurant *Dakshin* and in the dish *Paneer* in that restaurant.
 
 :arrow_down: Home page and restaurant page
 <br />
